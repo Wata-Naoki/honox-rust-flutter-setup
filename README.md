@@ -1,4 +1,4 @@
-# Circle Monorepo
+# Monorepo
 
 フロントエンド（Hono X）、API（Rust）、モバイル（Flutter）を含むモノレポ構成のプロジェクト
 
