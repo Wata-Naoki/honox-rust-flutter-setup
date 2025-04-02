@@ -1,0 +1,168 @@
+/* カスタムスタイルが必要な場合はここに追加 */
+
+:root {
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.todo-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.todo-button {
+  padding: 10px 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.todo-button:hover {
+  background-color: #357ae8;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-item input[type='checkbox'] {
+  margin-right: 10px;
+}
+
+.error {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.refresh-button {
+  margin-top: 20px;
+  padding: 8px 15px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+/* Todo詳細ページのスタイル */
+.todo-detail {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-detail h2 {
+  margin-top: 0;
+  color: #333;
+  word-break: break-word;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.status .completed {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.status .pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.button-group {
+  display: flex;
+  margin-top: 15px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-form .todo-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group button {
+    margin-right: 0 !important;
+    width: 100%;
+  }
+}

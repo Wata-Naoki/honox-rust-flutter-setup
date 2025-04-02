@@ -1,0 +1,31 @@
+{
+  "name": "circle-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "frontend:install": "cd apps/frontend && pnpm install",
+    "api:install": "cd apps/api && cargo build",
+    "mobile:install": "cd apps/mobile && flutter pub get",
+    "dev:frontend": "cd apps/frontend && npm run dev",
+    "dev:api": "cd apps/api && cargo watch -x run",
+    "dev:mobile": "cd apps/mobile && flutter run -d chrome --web-port=8080",
+    "dev:all": "concurrently \"npm run dev:api\" \"npm run dev:frontend\" \"npm run dev:mobile\"",
+    "dev:frontend-api": "concurrently \"npm run dev:api\" \"npm run dev:frontend\"",
+    "dev:mobile-api": "concurrently \"npm run dev:api\" \"npm run dev:mobile\"",
+    "build:frontend": "cd apps/frontend && npm run build",
+    "build:api": "cd apps/api && cargo build --release",
+    "build:mobile": "cd apps/mobile && flutter build web",
+    "build": "npm run build:frontend && npm run build:api && npm run build:mobile",
+    "lint": "biome check .",
+    "format": "biome format . --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "concurrently": "^8.2.2",
+    "lefthook": "^1.6.1"
+  }
+}

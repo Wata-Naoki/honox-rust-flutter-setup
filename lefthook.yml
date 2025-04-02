@@ -1,0 +1,19 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: npx biome check {staged_files}
+    format:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: npx biome format {staged_files} --write
+
+pre-push:
+  parallel: true
+  commands:
+    build-frontend:
+      run: cd apps/frontend && npm run build
+    build-api:
+      run: cd apps/api && cargo build --release
+    build-mobile:
+      run: cd apps/mobile && flutter build web
